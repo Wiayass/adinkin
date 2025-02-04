@@ -1,0 +1,1166 @@
+/*FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: url("images/champagne-beach-espiritu-santo-island-vanuatu-royalty-free-image-1655672510.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*NAVBAR*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  padding: 2rem 20rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+  color: white;
+}
+
+.navbar-logo img {
+  width: 6rem;
+  border-radius: 1rem;
+}
+
+.navbar-links {
+  display: flex;
+  width: auto;
+  height: auto;
+  border-radius: 1.3rem;
+  background-color: black;
+  padding: 0.8rem;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #9d9d9d75;
+}
+
+#burger {
+  margin: auto;
+  color: black;
+  background-color: white;
+  margin-right: 0.2rem;
+  margin-left: 0.5rem;
+  width: auto;
+  padding: 0.3rem;
+  border-radius: 40%;
+}
+
+/* Мобильное меню (изначально скрыто) */
+.mobile-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 1);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Активное состояние мобильного меню */
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  width: 25%;
+}
+
+/* Убедимся, что header выше мобильного меню */
+header.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Стилизация пунктов меню */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 32px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: #b6b6b6;
+}
+
+/* Анимация бургер-меню в крестик */
+#burger {
+  transition: transform 0.3s ease-in-out;
+}
+
+#burger.active {
+  transform: rotate(90deg);
+}
+
+/* Обратная анимация крестика при закрытии */
+#burger.inactive {
+  transform: rotate(0deg);
+}
+
+/*MAIN_SECTION*/
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  overflow: hidden;
+  /*background-color: black;*/
+}
+
+.title {
+  font-size: 13rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 5rem 15rem;
+  line-height: 1.5;
+}
+
+.title::before {
+  content: attr(data-text) " \A "attr(data-text) " \A "attr(data-text);
+}
+
+.main img {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: -15.5rem;
+  pointer-events: none;
+}
+
+.main .palm1 {
+  position: absolute;
+  width: 75rem;
+  left: -20rem;
+  bottom: 8rem;
+}
+
+.main .plantpalm1 {
+  position: absolute;
+  width: 60rem;
+  left: -15rem;
+  bottom: 5rem;
+  transform: rotate(0deg);
+}
+
+.main .plantpalm2 {
+  position: absolute;
+  width: 60rem;
+  right: -15rem;
+  bottom: 0;
+  transform: rotate(-15deg) scaleX(-1);
+  z-index: 10;
+}
+
+.main .tree1 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.main .imgbox {
+  position: absolute;
+  top: 10rem;
+  left: 70rem;
+  width: 80rem;
+  height: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.main .imgbox h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 80px;
+  padding: 2rem 5rem;
+  color: white;
+}
+
+.main .imgbox p {
+  padding: 0 0 2rem 6rem;
+  width: 40rem;
+  font-size: 32px;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: white;
+  font-style: normal;
+}
+
+.perehod {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 20rem;
+}
+
+.about {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff7e49b;
+  /*background-color: black;*/
+  overflow: hidden;
+}
+
+.firstblock {
+  width: 150rem;
+  height: auto;
+  margin: 0 auto;
+  align-items: center;
+  
+}
+
+.about h1 {
+  margin: 2rem 14rem;
+  font-size: 8rem;
+  width: 70rem;
+}
+
+.imagebox1 {
+  display: flex;
+  margin: 7rem 17rem;
+  width: 50rem;
+  height: 60rem;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 2rem;
+}
+
+.imagebox1 .lupa {
+  height: 50rem;
+  margin: 2rem 70rem;
+  z-index: 10;
+}
+
+.imagebox1 .newspaper {
+  position: absolute;
+  height: 70rem;
+  margin: -10rem 50rem;
+}
+
+.firstblock p {
+    
+    font-size: 24px;
+    width: 120rem;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: auto;
+    column-count: 2; /* Разделить текст на 2 колонки */
+    column-gap: 40rem; /* Расстояние между колонками */
+}
+
+.secondblock {
+  width: 150rem;
+  height: auto;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.imagebox2 {
+  margin: 7rem 100rem;
+  width: 40rem;
+  height: 50rem;
+  background-color: #fff;
+  transform: rotate(6deg);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+
+.secondblock .ancient_map {
+  height: 100rem;
+  margin: -65rem -35rem;
+  transform: rotate(15deg);
+}
+
+.secondblock .red_X {
+  position: absolute;
+  height: 3rem;
+  z-index: 1000;
+  margin: 9rem -2rem;
+}
+
+.thirdblock p {
+    display: flex;
+    margin: 20rem 90rem;
+    font-size: 24px;
+    width: 50rem;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.imagebox3 {
+    display: flex;
+    margin: 2rem 17rem;
+    width: 50rem;
+    height: 60rem;
+    background-color: #fff;
+    border-radius: 2rem;
+}
+
+.hotelki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Распределяет элементы по бокам */
+  width: 100%;
+  padding: 2rem 15rem; /* Добавляем отступы по бокам */
+}
+
+.hotelki h1 {
+  font-family: "Oswald", serif;
+  font-size: 128px;
+  padding: 0; /* Убираем padding, чтобы не было смещения */
+  margin: 0;
+}
+
+.hotelki button {
+  width: 30rem;
+  height: auto;
+  padding: 2rem;
+  border: none;
+  border-radius: 15rem;
+  font-size: 34px;
+  color: white;
+  background-color: #4884d3;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  background: white;
+}
+
+.photoblock {
+  width: 50%;
+  height: 100%;
+  background-image: url("images/g63backgroundphoto_2025-02-03_20-04-07.jpg");
+  background-size: cover;
+}
+
+.slide img {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  margin-left: 50%;
+  z-index: 10000;
+  padding: 10rem;
+}
+
+.slide-text h1 {
+  position: relative;
+  width: 60rem;
+  margin: 5rem 10rem;
+  font-size: 8rem;
+}
+
+.slide-text p {
+  min-width: 50rem;
+  width: 40rem;
+  margin-top: 10rem;
+  margin-left: 15rem;
+  color: #000;
+  font-size: 24px;
+  z-index: 100;
+}
+
+.slider-buttons {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.places {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+}
+
+.places h1 {
+  font-size: 54px;
+  margin: 2rem 0;
+}
+
+.place {
+  display: flex;
+  width: 42rem;
+  height: auto;
+  background-color: #a84d9ab9;
+  margin: 2rem 0;
+}
+
+.place h1 {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  color: white;
+  font-size: 32px;
+}
+
+.place p {
+  width: 20rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  margin: 5rem -14rem; /* Убираем большие отступы по бокам */
+  text-align: center; /* Выравниваем текст по центру */
+}
+
+.place img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.summary {
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin: 8rem auto;
+}
+
+.summarybox {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.summarybox h1 {
+  font-size: 84px;
+  padding: 5rem;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.summarybox p {
+  width: 50rem;
+  padding: 0 0 2rem 7rem;
+  font-size: 24px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* footer */
+
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  width: 100%;
+  background-color: #4e3620;
+  padding: 70px 0;
+}
+.footer-content {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-content h4 {
+  font-size: 18px;
+  color: #f4a261;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-content h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #8d9777;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-content ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-content ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #8d9777;
+  text-decoration: none;
+  font-weight: 300;
+  color: #fff;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-content ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-content .footer-icons a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-content .footer-icons a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.footer-bottom {
+  background-color: #432e1a;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.footer-bottom p {
+  color: #f4a261;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.footer-bottom .designed {
+  color: #ccc;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 28px;
+}
+
+@media (max-width: 1920px) {
+  .navbar {
+    padding: 2rem 10rem;
+  }
+
+  .main .title {
+    width: 45rem;
+    top: 10rem;
+    margin: 0 15rem;
+    font-size: 6rem;
+  }
+
+  .ocean1 {
+    top: -10rem;
+  }
+
+  .tree1 {
+    top: -10rem;
+  }
+
+  .main .imgbox {
+    width: 55rem;
+    margin: 0 -15rem;
+  }
+
+  .imagebox1 .lupa {
+    margin: 2rem 60rem;
+  }
+
+  .imagebox1 {
+    position: relative; /* или absolute */
+    z-index: 10000;
+  }
+
+  .imagebox1 .newspaper {
+    margin: 2rem 30rem;
+    width: 70rem;
+    height: 70rem;
+    z-index: 0;
+  }
+
+  .firstblock p {
+    margin: 14rem auto;
+  }
+
+  .thirdblock p {
+    margin: 5rem 60rem;
+  }
+
+  .imagebox2 {
+    margin: 2rem 80rem;
+  }
+
+  .slide-text h1 {
+    font-size: 64px;
+    margin: 5rem;
+    width: auto;
+  }
+
+  .slide-text p {
+    font-size: 24px;
+    width: 20rem;
+    margin: 5rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  .main .imgbox {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+  }
+
+  .firstblock p {
+    margin: 5rem 10rem;
+  }
+
+  .imagebox2 {
+    margin: 40rem 0 0 50rem;
+    transform: rotate(5deg);
+  }
+
+  .thirdblock p {
+    margin: 20rem 20rem;
+  }
+
+  .slide-text p {
+    margin: 3rem 7rem;
+    min-width: 30rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh; /* Гарантирует, что body займет всю высоту экрана */
+        margin: 0;
+    
+        background: url('images/champagne-beach-espiritu-santo-island-vanuatu-royalty-free-image-1655672510.jpg') 
+            no-repeat center center fixed; /* Фиксируем фон */
+        background-size: cover; /* Заполняет весь экран */
+    }
+    
+
+  .about,
+  .places,
+  .summary,
+  .hotelki {
+    background-color: white;
+  }
+
+  .navbar {
+    width: auto;
+    padding: 1.5rem 0;
+    gap: 7rem;
+  }
+
+  .ocean1 {
+    opacity: 0;
+  }
+  .main .title {
+    margin: auto;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+
+
+  .main .imgbox {
+    width: 90%;
+    left: 35%;
+    z-index: 100;
+  }
+
+  .about h1 {
+    margin: auto 2rem;
+  }
+
+  .imagebox1 {
+    align-items: center;
+    justify-items: center;
+  }
+
+  .imagebox1 .mafioznik{
+    width: 90%;
+    margin: 2rem -15rem;
+  }
+
+  .imagebox1 .lupa {
+    margin: auto -10rem;
+    z-index: -100;
+  }
+
+  .imagebox1 .newspaper {
+    margin: auto -10rem;
+    z-index: -1000;
+  }
+
+
+  .firstblock p{
+    margin: 3rem 5rem;
+  }
+
+  .imagebox2 {
+    margin: 2rem 4rem;
+    transform: rotate(0);
+    background-color: #000;
+  }
+
+
+  .secondblock .ancient_map {
+    margin: 10rem -20rem;
+    width: 90rem;
+  }
+
+  .secondblock .red_X {
+    margin: 54rem -12rem;
+  }
+
+
+  .thirdblock p{
+    width: 90%;
+    margin: 2rem 3rem;
+  }
+
+  .imagebox3 {
+    width: 80%;
+    background-color: #000;
+    margin: auto;
+  }
+
+  .slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider-track {
+    display: flex;
+    width: 100%;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;  /* Stacking elements vertically */
+    background: white;
+  }
+  
+  .photoblock {
+    display: none;
+  }
+
+  .slide-text {
+    background-color: white;
+  }
+  
+  .slide img {
+    display: flex;
+    width: 90%;
+    margin-left: 2.5rem;
+    height: 40%;
+    margin-top: 90%;  /* Moves image to the bottom */
+    margin-bottom: 5rem;
+    z-index: 10000;
+    padding: 0;
+  }
+  
+  .slide-text {
+    position: relative;
+    margin: 2rem 0;  /* Adjust margins for better spacing */
+    text-align: center;
+  }
+  
+  .slide-text h1 {
+    width: 90%;
+    font-size: 5rem;
+    margin: 2rem;
+  }
+  
+  .slide-text p {
+    font-size: 20px;
+    color: #000;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .slider-buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .slider-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .slider-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+
+
+
+
+  .hotelki {
+    flex-direction: column; /* Меняем направление на вертикальное */
+    align-items: center; /* Центрируем элементы */
+    text-align: center; /* Центрируем текст */
+    padding: 2rem; /* Уменьшаем отступы */
+  }
+
+  .hotelki h1 {
+    font-size: 64px; /* Уменьшаем размер шрифта */
+  }
+
+  .hotelki button {
+    width: 100%; /* Делаем кнопку на всю ширину */
+    max-width: 30rem; /* Ограничиваем максимальную ширину */
+    margin-top: 1rem; /* Добавляем отступ сверху */
+  }
+
+  .summary {
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .summarybox {
+    width: 90%;
+  }
+
+  .summarybox p{
+    width: 30rem;
+    
+  }
+
+  .footer-content {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+}
+
+@media (max-width: 430px) {
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh; /* Гарантирует, что body займет всю высоту экрана */
+        margin: 0;
+    
+        background: url('images/champagne-beach-espiritu-santo-island-vanuatu-royalty-free-image-1655672510.jpg') 
+            no-repeat center center fixed; /* Фиксируем фон */
+        background-size: cover; /* Заполняет весь экран */
+    }
+    
+
+  .about,
+  .places,
+  .summary,
+  .hotelki {
+    background-color: white;
+  }
+
+  .navbar {
+    width: auto;
+    padding: 1.5rem 0;
+    gap: 2rem;
+  }
+
+  .navbar-logo h1{
+    font-size: 12px;
+  }
+
+  .ocean1 {
+    opacity: 0;
+  }
+  .main .title {
+    margin: auto;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+
+
+  .main .imgbox {
+    width: 90%;
+    left: 16.5rem;
+    z-index: 100;
+  }
+
+  .main .title {
+    top: 0;
+    font-size: 4.5rem;
+  }
+  .main .imgbox h1 {
+    font-size: 44px;
+
+  }
+
+  .main .imgbox p {
+    width: 20rem;
+    font-size: 24px;
+
+  }
+
+  .main img {
+    width: 10%;
+  }
+
+  .about h1 {
+    margin: auto 2rem;
+    font-size: 5rem;
+  }
+
+  .about {
+    width: 100%;
+    margin: auto;
+  }
+
+  .imagebox1  {
+    width: 25rem;
+    margin: 2rem 18rem;
+  }
+
+  .imagebox1 .newspaper {
+    margin: auto -25rem;
+  }
+
+  .firstblock p{
+    width: 85rem;
+    margin: 2rem 3rem;
+    font-size: 24px;
+  }
+
+  .imagebox2 {
+    width: 15%;
+    height: 40rem;
+    margin: auto 2.5rem;
+  }
+
+  .secondblock .ancient_map {
+    width: 60rem;
+    height: 60rem;
+  }
+  .secondblock .red_X {
+    margin: 35rem -2rem;
+  }
+
+  .thirdblock p{
+    margin: 2rem 2rem;
+  }
+
+
+  .imagebox3 {
+    height: 40rem;
+  }
+
+  .slider {
+    height: 100rem;
+  }
+
+  .slide {
+    height: 100rem;
+  }
+
+  .slide p{
+    margin: 2rem auto;
+    min-width: 20rem;
+    width: 5rem;
+    height: auto;
+    font-size: 20px;
+  }
+
+  .slide img {
+    margin-top: 70rem;
+    margin-left: 4rem;
+    width: 20rem;
+    height: 20rem;
+  }
+
+
+  .place {
+    display: flex;
+    width: 90%;
+    height: auto;
+    background-color: #a84d9ab9;
+    margin: 2rem 0;
+    flex-direction: column;  /* Arrange items vertically */
+    align-items: center;  /* Center items horizontally */
+    padding: 1rem;  /* Added padding to avoid edge-to-edge content */
+  }
+  
+  .place h1 {
+    margin-top: 1rem;  /* Reduced margin to make it closer to the top */
+    padding: 0.5rem;
+    color: white;
+    font-size: 32px;
+    text-align: center;  /* Center the heading */
+  }
+  
+  .place p {
+    width: 20rem;
+    padding: 0.5rem;
+    font-size: 20px;
+    margin: 1rem 0;  /* Adjusted margin to avoid large spaces */
+    text-align: center;  /* Center text within the paragraph */
+  }
+  
+  .place img {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 1rem;  /* Add space between the text and image */
+  }
+  
+
+  .summary {
+    height: auto;
+  }
+
+  .summarybox h1{
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .summarybox p{
+    width: 20rem;
+    padding: 1rem;
+    margin: auto;
+  }
+
+}
