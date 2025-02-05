@@ -109,7 +109,6 @@ header {
 .mobile-menu.active {
   opacity: 1;
   visibility: visible;
-  width: 25%;
 }
 
 /* Убедимся, что header выше мобильного меню */
@@ -182,6 +181,16 @@ header.navbar {
   content: attr(data-text) " \A "attr(data-text) " \A "attr(data-text);
 }
 
+
+.imgbox .discler {
+    width: 30rem;
+    border-left: 3px solid #a84d9a; /* Линия слева */
+    padding: 1rem;
+    margin: auto 7rem;
+    color: white;
+}
+
+
 .main img {
   display: flex;
   position: absolute;
@@ -244,6 +253,10 @@ header.navbar {
   color: white;
 }
 
+.imagebox1 .mafioznik {
+    width: 30rem; height: 30rem; margin: auto 10rem; justify-items: center;
+}
+
 .main .imgbox p {
   padding: 0 0 2rem 6rem;
   width: 40rem;
@@ -273,6 +286,14 @@ header.navbar {
   overflow: hidden;
 }
 
+
+.about h1 {
+  margin: 2rem 14rem;
+  font-size: 8rem;
+  width: 70rem;
+}
+
+
 .firstblock {
   width: 150rem;
   height: auto;
@@ -281,11 +302,7 @@ header.navbar {
   
 }
 
-.about h1 {
-  margin: 2rem 14rem;
-  font-size: 8rem;
-  width: 70rem;
-}
+
 
 .imagebox1 {
   display: flex;
@@ -299,7 +316,7 @@ header.navbar {
 
 .imagebox1 .lupa {
   height: 50rem;
-  margin: 2rem 70rem;
+  margin: 2rem 10rem;
   z-index: 10;
 }
 
@@ -310,7 +327,6 @@ header.navbar {
 }
 
 .firstblock p {
-    
     font-size: 24px;
     width: 120rem;
     font-family: "Cormorant Garamond", serif;
@@ -336,6 +352,28 @@ header.navbar {
   transform: rotate(6deg);
   border-radius: 2rem;
   overflow: hidden;
+}
+
+.thirdblock .features-list {
+    margin-top: -18rem;
+    list-style-type: disc; /* Маркеры - точки (можно заменить на square, circle) */
+    margin-left: 90rem; /* Отступ слева */
+    padding-left: 1rem; /* Внутренний отступ */
+    font-size: 24px; /* Размер текста */
+    color: #333; /* Цвет текста */
+    
+    
+}
+
+.features-list li {
+    margin-bottom: 0.5rem; /* Отступ между пунктами списка */
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.imagebox2 .unknown {
+    width: 30rem; align-items: center; justify-items: center; margin: 5rem;
 }
 
 
@@ -364,12 +402,15 @@ header.navbar {
 
 .imagebox3 {
     display: flex;
-    margin: 2rem 17rem;
+    margin: 10rem 17rem;
     width: 50rem;
     height: 60rem;
     background-color: #fff;
     border-radius: 2rem;
+    justify-content: space-between;
 }
+
+
 
 .hotelki {
   display: flex;
@@ -396,6 +437,10 @@ header.navbar {
   color: white;
   background-color: #4884d3;
   cursor: pointer;
+}
+
+.chatggg{
+    margin: 2rem 45rem;
 }
 
 .slider {
@@ -487,69 +532,82 @@ header.navbar {
 }
 
 .place {
-  display: flex;
-  width: 42rem;
-  height: auto;
-  background-color: #a84d9ab9;
-  margin: 2rem 0;
-}
-
-.place h1 {
-  margin-top: 2rem;
-  margin-left: 1rem;
-  padding: 0.5rem;
-  color: white;
-  font-size: 32px;
-}
-
-.place p {
-  width: 20rem;
-  padding: 0.5rem;
-  font-size: 16px;
-  margin: 5rem -14rem; /* Убираем большие отступы по бокам */
-  text-align: center; /* Выравниваем текст по центру */
-}
-
-.place img {
-  width: 20rem;
-  height: 20rem;
-}
+    display: flex;
+    width: 42rem;
+    height: auto;
+    background-color: #a84d9ab9;
+    margin: 2rem 0;
+    align-items: center;
+    padding: 1rem; /* Добавляем отступ внутри */
+  }
+  
+  .place h1 {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    color: white;
+    font-size: 32px;
+  }
+  
+  .place p {
+    width: 18rem; /* Уменьшаем ширину текста */
+    font-size: 16px;
+    margin: 1rem; /* Делаем отступы более сбалансированными */
+    text-align: left; /* Выравниваем текст по левому краю */
+    word-wrap: break-word; /* Разрешаем перенос строк */
+  }
+  
+  .place img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover; /* Обеспечиваем сохранение пропорций изображения */
+  }
+  
 
 .summary {
   width: 100%;
   height: auto;
   align-items: center;
   margin: 8rem auto;
+  justify-content: space-between;
+  display: flex;
 }
 
 .summarybox {
   width: 70%;
-  height: auto;
+  height: 60rem;
   margin: auto;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(4.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  
 }
 
 .summarybox h1 {
-  font-size: 84px;
+  font-size: 96px;
   padding: 5rem;
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  color: white;
 }
 
 .summarybox p {
   width: 50rem;
   padding: 0 0 2rem 7rem;
-  font-size: 24px;
+  font-size: 32px;
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   font-style: normal;
+}
+
+.summarybox img{
+    width: 40rem;
+    margin: -20rem 60rem;
 }
 
 /* footer */
@@ -567,7 +625,7 @@ ul {
 }
 .footer {
   width: 100%;
-  background-color: #4e3620;
+  background-color: #9c118053;
   padding: 70px 0;
 }
 .footer-content {
@@ -576,7 +634,7 @@ ul {
 }
 .footer-content h4 {
   font-size: 18px;
-  color: #f4a261;
+  color: #9119919f;
   text-transform: capitalize;
   margin-bottom: 35px;
   font-weight: 500;
@@ -587,7 +645,7 @@ ul {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #8d9777;
+  background-color: #975774c6;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
@@ -606,7 +664,7 @@ ul {
   transition: all 0.3s ease;
 }
 .footer-content ul li a:hover {
-  color: #ffffff;
+  color: pink;
   padding-left: 8px;
 }
 
@@ -628,13 +686,13 @@ ul {
 }
 
 .footer-bottom {
-  background-color: #432e1a;
+  background-color: #7c1a8080;
   margin-bottom: 0;
   width: 100%;
 }
 
 .footer-bottom p {
-  color: #f4a261;
+  color: #631c506d;
   margin: auto;
   font-size: 18px;
   font-weight: 500;
@@ -642,7 +700,7 @@ ul {
 }
 
 .footer-bottom .designed {
-  color: #ccc;
+  color: #98225967;
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   font-style: normal;
@@ -1018,14 +1076,26 @@ ul {
 
 
   .main .imgbox {
-    width: 90%;
-    left: 16.5rem;
+    width: 95%;
+    left: 15.8rem;
     z-index: 100;
+    height: auto;
+  }
+
+  .imgbox .discler {
+    width: 10rem;
+    margin: auto;
+  }
+
+  .perehod {
+    width: 100%;
+    height: 10rem;
   }
 
   .main .title {
+    width: 100%;
     top: 0;
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
   .main .imgbox h1 {
     font-size: 44px;
@@ -1044,12 +1114,14 @@ ul {
 
   .about h1 {
     margin: auto 2rem;
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .about {
     width: 100%;
     margin: auto;
+    overflow: hidden;
+
   }
 
   .imagebox1  {
@@ -1057,20 +1129,36 @@ ul {
     margin: 2rem 18rem;
   }
 
+  .imagebox1 .mafioznik{
+    position: absolute;
+    width: 10rem;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
   .imagebox1 .newspaper {
     margin: auto -25rem;
   }
 
   .firstblock p{
-    width: 85rem;
+    width: 12%;
+    height: auto;
     margin: 2rem 3rem;
     font-size: 24px;
+    gap: 0;
+    column-count: 1;
   }
 
   .imagebox2 {
-    width: 15%;
-    height: 40rem;
+    width: 13%;
+    height: auto;
     margin: auto 2.5rem;
+  }
+
+  .imagebox2 .unknown{
+    margin: auto;
+    width: 20rem;
   }
 
   .secondblock .ancient_map {
@@ -1081,7 +1169,16 @@ ul {
     margin: 35rem -2rem;
   }
 
+  .thirdblock .features-list {
+    width: 20rem;
+    margin: auto;
+    z-index: 100;
+    overflow: hidden;
+
+  }
+
   .thirdblock p{
+    width: 83%;
     margin: 2rem 2rem;
   }
 
@@ -1106,14 +1203,29 @@ ul {
     font-size: 20px;
   }
 
+  .chatggg {
+    margin: auto ;
+  }
+
   .slide img {
-    margin-top: 70rem;
-    margin-left: 4rem;
+    margin-top: 75rem;
+    margin-left: 2.3rem;
     width: 20rem;
     height: 20rem;
   }
 
+  .slide-text h1{
+    font-size: 45px;
+    margin: auto;
+  }
 
+  
+  .places h1{
+    width: 100%;
+    font-size: 3rem;
+    margin: auto;
+    overflow: hidden;
+  }
   .place {
     display: flex;
     width: 90%;
@@ -1137,6 +1249,7 @@ ul {
     width: 20rem;
     padding: 0.5rem;
     font-size: 20px;
+    color: white;
     margin: 1rem 0;  /* Adjusted margin to avoid large spaces */
     text-align: center;  /* Center text within the paragraph */
   }
@@ -1152,15 +1265,32 @@ ul {
     height: auto;
   }
 
+  .summarybox{
+    height: auto;
+  }
+
   .summarybox h1{
-    margin: auto;
-    padding: 2rem;
+    width: 90%;
+    margin: auto -5rem;
+    font-size: 5rem;
   }
 
   .summarybox p{
-    width: 20rem;
+    width: 18rem;
     padding: 1rem;
+    font-size: 24px;
     margin: auto;
+  }
+  .footer {
+    background-color: #c58ab9;
+  }
+
+  .footer-content h4 {
+    color: pink;
+  }
+
+  .footer-content ul li a{
+    color: darkorchid;
   }
 
 }
