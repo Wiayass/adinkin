@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте</title>
+
+
+    <style>
+        /*FONTS*/
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: auto;
+        }
+
+        section {
+            width: 90rem;
+            font-size: 24px;
+            margin: 10rem auto;
+        }   
+
+        .maintext p{
+            font-size: 28px;
+        }
+
+        .FAQS {
+            margin: 2rem auto;
+        }
+
+        .FAQS h3{
+            margin: 1rem 1rem;
+        }
+
+        .FAQS button {
+            margin: auto;
+
+            width: auto;
+            height: auto;
+            border: none;
+            border-radius: 15px;
+            background-color: #6082c3;
+        }
+
+        .FAQS button a{
+            text-decoration: none;
+            color: white;
+            padding: 2rem;
+            font-size: 24px;
+        }
+
+        .developers {
+            display: flex;
+            margin: 5rem auto;
+            justify-content: space-between; /* Размещение элементов с пробелом между ними */
+            align-items: center; /* Вертикальное выравнивание по центру */
+        }
+
+        .box {
+            width: 45%; /* Устанавливаем ширину для каждого блока (можно настроить по необходимости) */
+            margin: auto;
+
+        }
+
+        .box img{
+            width: 20rem;
+            height: 20rem;
+            background-size: contain;
+        }
+
+        @media(max-width: 430px){
+            section{
+                margin: auto;
+                width: 100%;
+                overflow: hidden;
+            }
+            .maintext {
+                margin: 5rem auto;
+                width: 90%;
+            }
+            
+            .FAQS {
+                margin: auto;
+                width: 90%;
+            }
+            
+            .FAQS button {
+                margin: auto;
+                width: 90%;
+            }
+
+            .developers {
+                display: block;
+                justify-content: center;
+                margin: 5rem auto;
+            }
+
+            .box{
+                margin: auto;
+            }
+
+            .main button {
+                width: 10rem;
+                margin-bottom:2rem;
+                margin-left: 5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <section class="main">
+        <div class="maintext">
+            <h1>О сайте</h1>
+            <p>Сам сайт имеет исключительно развлекательные цели и не несет оскорбительного характера. Я написал его чисто по приколу когда не знал о чем написать. Дело было июльским вечером когда я сидел и думал о чем же написать сайт и мне Малика дала идею написать сайт о Адине. Ну и крч как то пошло поехало, хотя сам сайте я забрасывал из за технических ошибок и думал скинуть его еще летом, но из за подготовки не дописал его. Поэтому я решил дописать его к зиме ближе и начал с нуля. Времени было мало поэтому что успел наклепать то и успел. Надеюсь понравится;)</p>
+        </div>
+
+        <div class="FAQS">
+            <h1>Почему сочетание цветов как попало?</h1>
+            <h3>Лень было искать норм сочетание и сделал по своему да и время поджмало</h3>
+
+            <h1>Я по сути сам с собой болтаю, эх шиза</h1>
+            <h3>На самом деле я бы добавил больше функционала если бы времени было больше, начал бы раньше если бы не получил травму. </h3>
+
+            <button><a href="https://forms.gle/ZNSgACHpqt8f6mDW9">Оценка</a></button>
+        </div>
+
+        <div class="developers">
+
+            <div class="box">
+                <img src="images/wiayass.jpeg" alt="">
+                <h1>Developer #1</h1>
+                <p><a href="https://t.me/Wiayass">Telega</a></p>
+                <p>GitHub с проектом : <a href="https://github.com/Wiayass/adinkin">тут</a></p>
+
+                
+            </div>
+
+            <div class="box">
+                <img src="images/mellito_2024-07-05_00-33-48.jpg" alt="">
+                <h1>Developer #2</h1>
+                <p><a href="https://t.me/melli4ka">Телега</a></p>
+            </div>
+        </div>
+
+        <button><a href="index.html">Кнопка назад</a></button>
+    </section>
+
+</body>
+</html>

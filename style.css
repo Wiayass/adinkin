@@ -1131,9 +1131,8 @@ ul {
 
   .imagebox1 .mafioznik{
     position: absolute;
-    width: 10rem;
-    top: 0;
-    left: 0;
+    width: 90%;
+    margin: auto -17rem;
     z-index: 1000;
   }
 
@@ -1144,7 +1143,7 @@ ul {
   .firstblock p{
     width: 12%;
     height: auto;
-    margin: 2rem 3rem;
+    margin: 2rem 4rem;
     font-size: 24px;
     gap: 0;
     column-count: 1;
@@ -1231,7 +1230,7 @@ ul {
     width: 90%;
     height: auto;
     background-color: #a84d9ab9;
-    margin: 2rem 0;
+    margin: 2rem auto;
     flex-direction: column;  /* Arrange items vertically */
     align-items: center;  /* Center items horizontally */
     padding: 1rem;  /* Added padding to avoid edge-to-edge content */
