@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="HBdaystyle.css">
+    <title>HBday</title>
+</head>
+<body>
+    
+
+    <div class="bodyh1">
+        <h1>Happy <br> Birthday!</h1>
+    </div>
+
+    <div class="balloons"></div>
+    <div class="confetti"></div>
+
+
+
+    <div class="container">
+        <h1>Түған күннінмен!</h1>
+        <p>Адина поздравляю с днем рождения! 
+            Дай Аллах тебе счастья, здоровья, процветания и оставалась сногсшибательной .
+            Чтобы ставила цели и добивалась их . Никогда не грустила и была на позитиве , 
+            ведь улыбка продлевает жизнь, а также она тебе идет . Справлялась со своими трудностями и шла только вперед. Ведь,
+        </p>
+        <blockquote>
+            <p>За каждой тягостью наступает облегчение. <br>
+                إِنَّ مَعَ الْعُسْرِ يُسْرًا
+            </p>
+            <footer>— <cite>94:6 Сура аш-Шарх</cite></footer>
+        </blockquote>
+        
+        <p>
+            Ну что еще можно сказать, осы жыл өте қиын болды, бірақ келесы жыл қиынрақ болады.
+             К. Ж. Кемелұлы Токаев. А ну еще, дай бог закончить тебе университет и работать тем кем ты мечтала.
+             Ну и такой маленький видос с поздравлением
+        </p>
+
+        <figure>
+            <video controls width="600" poster="placeholder.jpg"></video>
+                <source src="WhatsApp Video 2026-02-06 at 01.43.49.mp4" type="video/mp4">
+            </video>
+            <figcaption>Видео-поздравление для Адины</figcaption>
+        </figure>
+
+        <p>Ну и вот как то так, еще раз поздравляю тебя с днем рождения! 🎂 Поздравляю с 18ти летием!✌️ Может вышло простенько, но как успел наклепать за ночь. :) </p>
+
+        <img src="8fc8b89d-f0d6-42e0-8031-edaeb77fae98.png" alt="">
+
+        <p>С днем рождения, Адина!</p>
+    </div>
+        
+    <footer class="site-footer" style="text-align:center;padding:1.5rem 1rem;background:#f8f9fa;color:#444;margin-top:2rem;">
+        <div>
+            <p style="margin:0;">© <span id="year"></span> Адина. Все самые тёплые пожелания!</p>
+            <p style="margin:0;font-size:.9rem;">
+                <a href="mailto:farid.vafazov459@gmail.com">Связаться</a> • <a href="#" rel="noopener">Поделиться</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        (function(){ const el = document.getElementById('year'); if(el) el.textContent = new Date().getFullYear(); })();
+    </script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ===== ШАРИКИ ===== */
+            const balloonContainer = document.querySelector(".balloons");
+            const balloonColors = [
+                "#ff6b6b",
+                "#ffd93d",
+                "#6bcBef",
+                "#51cf66",
+                "#9775fa",
+                "#ffa8a8",
+                "#63e6be"
+            ];
+
+            const BALLOON_COUNT = 45; // больше шариков
+
+            for (let i = 0; i < BALLOON_COUNT; i++) {
+                const balloon = document.createElement("div");
+                balloon.className = "balloon";
+
+                const size = Math.random() * 25 + 35;
+                balloon.style.width = size + "px";
+                balloon.style.height = size * 1.35 + "px";
+
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                balloon.style.background = balloon.style.color;
+
+                const duration = Math.random() * 4 + 4;
+                balloon.style.animationDuration = duration + "s";
+
+                const drift = Math.random() * 250 - 125 + "px";
+                balloon.style.setProperty("--drift", drift);
+
+                balloonContainer.appendChild(balloon);
+                setTimeout(() => balloon.remove(), duration * 1000);
+            }
+
+            /* ===== КОНФЕТТИ ===== */
+            const confettiContainer = document.querySelector(".confetti");
+            const confettiColors = [
+                "#ff6b6b",
+                "#ffd93d",
+                "#74c0fc",
+                "#63e6be",
+                "#b197fc",
+                "#ffa8a8"
+            ];
+
+            const CONFETTI_COUNT = 120;
+
+            for (let i = 0; i < CONFETTI_COUNT; i++) {
+                const piece = document.createElement("div");
+                piece.className = "confetti-piece";
+
+                piece.style.left = Math.random() * 100 + "vw";
+                piece.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                piece.style.color = piece.style.background;
+
+                piece.style.width = Math.random() * 6 + 6 + "px";
+                piece.style.height = Math.random() * 10 + 10 + "px";
+
+                const duration = Math.random() * 3 + 4;
+                piece.style.animationDuration = duration + "s";
+
+                piece.style.animationDelay = Math.random() * 1.5 + "s";
+
+                confettiContainer.appendChild(piece);
+                setTimeout(() => piece.remove(), (duration + 2) * 1000);
+            }
+        });
+    </script>
+
+
+</body>
+</html>

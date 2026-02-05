@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    height: auto; /* центрируем по высоте */
+}
+
+/* Большой заголовок — находится за .container, только обводка, сам текст прозрачный */
+.bodyh1 h1{
+    
+    width: 70%;          
+    font-size: 25rem;         
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 6px rgba(255, 255, 255, 0.95); /* видимая обводка */
+    text-shadow: none;
+    margin: 0 auto;
+}
+
+/* Контейнер поверх заголовка */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto; /* подберите подходящую высоту */
+    background-color: rgba(236, 247, 255, 0.95); /* светлый голубоватый — сочетается с градиентом */
+    border: 1px solid rgba(3, 37, 65, 0.06);
+    width: 70%;
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2, 18, 45, 0.06);
+}
+
+.container h1 {
+    font-size: 4rem;
+    color: #012a4a; /* глубокий синий для хорошего контраста */
+    text-align: center;
+    padding: 20px 0;
+    line-height: 1.2;
+    margin: 0 auto;
+}
+
+.container p {
+    font-size: 1.5rem;
+    color: #034b63; /* мягкий синевато-бирюзовый — читаемо на фоне */
+    text-align: left;
+    margin: 20px;
+    width: auto;
+    line-height: 1.6;
+}
+
+
+blockquote {
+    position: relative;
+    width: 50%;
+    font-size: 1.4rem;
+    color: #023e5a;
+    margin: 0 auto;
+    padding: 1.5rem 1.75rem;
+    padding-left: 3.75rem;
+    background: linear-gradient(90deg, rgba(2,136,209,0.04), rgba(1,79,134,0.02));
+    border-left: 6px solid #0288d1;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(2,18,45,0.05);
+    line-height: 1.6;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    overflow: hidden;
+}
+
+
+/* Большая декоративная кавычка */
+blockquote::before {
+    content: "“";
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    font-size: 3.6rem;
+    color: rgba(2,136,209,0.14);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Если внутри blockquote используется <p> */
+blockquote p {
+    margin: 0;
+    color: inherit;
+}
+
+/* Подпись/источник цитаты */
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #06668d;
+    font-style: normal;
+    opacity: 0.9;
+}
+
+
+video {
+    width: auto;
+    height: 40rem;
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(2,18,45,0.1);
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1rem;
+    color: #034b63;
+    margin-top: 0;
+    opacity: 0.85;
+}
+
+img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(2,18,45,0.1);
+}
+
+/* ===== ШАРИКИ ===== */
+.balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -120px;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.95;
+    filter: blur(0.6px);
+    box-shadow:
+        0 0 18px rgba(255,255,255,0.35),
+        0 0 35px currentColor;
+    animation: flyUp linear forwards;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 45px;
+    background: rgba(0,0,0,0.25);
+    transform: translateX(-50%);
+}
+
+@keyframes flyUp {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-130vh) translateX(var(--drift));
+    }
+}
+
+/* ===== КОНФЕТТИ ===== */
+.confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    opacity: 0.9;
+    filter: blur(0.4px);
+    box-shadow: 0 0 12px currentColor;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    from {
+        transform: translateY(-20vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(120vh) rotate(720deg);
+    }
+}
+
+
+
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #012a4a;
+    opacity: 0.7;
+}
+
+
+
+
+/* Мобильные оптимизации */
+@media (max-width: 480px) {
+    body {
+        padding: 4vh 0;
+    }
+    .bodyh1 h1 {
+        /* на очень узких экранах декоративный фон-надпись может мешать — сделать полупрозрачной */
+        font-size: clamp(4rem, 18vw, 12rem);
+        -webkit-text-stroke: clamp(1px, 0.4vw, 3px) rgba(255,255,255,0.95);
+        opacity: 0.9;
+    }
+    .container {
+        padding: clamp(1rem, 5vw, 1.75rem);
+        width: min(100%, 94%);
+        border-radius: 10px;
+    }
+    blockquote {
+        width: 100%;
+        padding-left: clamp(1.25rem, 6vw, 2.25rem);
+        padding-right: clamp(0.75rem, 4vw, 1rem);
+    }
+
+    footer {
+        font-size: 0.9rem;
+        margin: 1.5rem 0;
+        margin-bottom: 0;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 481px) and (max-width: 900px) {
+    .bodyh1 h1 {
+        font-size: clamp(6rem, 16vw, 18rem);
+        -webkit-text-stroke: clamp(2px, 0.5vw, 4px) rgba(255,255,255,0.95);
+    }
+    .container {
+        padding: clamp(1.25rem, 3.5vw, 3rem);
+        width: min(900px, 92%);
+    }
+    blockquote {
+        width: 85%;
+    }
+}
+
+
+
+/* Если хотите скрыть декоративный большой заголовок на сверхмалых экранах:
+   раскомментируйте правило ниже */
+/*
+@media (max-width: 360px) {
+    .bodyh1 { display: none; }
+}
+*/
